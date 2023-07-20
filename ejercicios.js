@@ -123,13 +123,29 @@ Casos para probar:
 
 // Paso 10: Imprime la longitud del array "numeros" en la consola
 
+// const numeros = [];
+// numeros.push(1),
+//   numeros.push(2),
+//   numeros.push(3),
+//   numeros.push("keepcoding"),
+//   numeros.push(4),
+//   numeros.push(5);
+
+// numeros.includes("keepcoding") &&
+//   console.log("Este array no solo tiene números.");
+// numeros.unshift(10);
+// console.log(numeros);
+// const index = numeros.indexOf("keepcoding");
+// numeros.splice(index, 1);
+// console.log(numeros);
+// console.log(numeros.length);
+
 const numeros = [];
-numeros.push(1),
-  numeros.push(2),
-  numeros.push(3),
-  numeros.push("keepcoding"),
-  numeros.push(4),
-  numeros.push(5);
+
+for (let i = 1; i <= 5; i++) {
+  numeros.push(i);
+  if (i === 3) numeros.push("keepcoding");
+}
 
 numeros.includes("keepcoding") &&
   console.log("Este array no solo tiene números.");
@@ -139,3 +155,21 @@ const index = numeros.indexOf("keepcoding");
 numeros.splice(index, 1);
 console.log(numeros);
 console.log(numeros.length);
+
+// Lista de números: 1, 2, 33, 41, 5, 60, 74, 87, 90, 101
+// Paso 1: Crea un array llamado numbers que contenga al menos estos números
+// Paso 2: Crea un array vacío llamado oddNumbers.
+// Paso 3: Utiliza un bucle for para iterar sobre cada número en la lista numbers.
+// Paso 4: En cada iteración, verifica si el número actual es impar.
+//         Si es impar, agrégalo al array oddNumbers utilizando el método push().
+//         NOTA: números pares son aquellos que al dividirlos por 2 el residuo/resto es 0
+// Paso 5: Después del bucle, imprime en la consola el contenido del array oddNumbers.
+
+const numbers = [1, 2, 33, 41, 5, 60, 74, 87, 90, 101];
+const oddNumbers = [];
+
+for (let index = 0; index < numbers.length; index++) {
+  if (numbers[index] % 2 !== 0) oddNumbers.push(numbers[index]);
+}
+
+console.log(oddNumbers);
