@@ -375,9 +375,34 @@ console.log(miCalculadora.dividir(2)); // Debería imprimir 6
 console.log(miCalculadora.sumar(10)); // Debería imprimir 16
 
 // Callbacks
-const realizarOperacion = (num1, num2, operacion) => {
-  return operacion(num1, num2);
+
+// const realizarOperacion = (num1, num2, operacion) => {
+//   return operacion(num1)(num2);
+// };
+
+// console.log(realizarOperacion(1, 2, (a) => (b) => a + b));
+// console.log(realizarOperacion(1, 2, (a) => (b) => a - b));
+
+const memoize = (a, b, operacion) => {
+  const cache = {};
+  const cached = JSON.stringify(a + b);
+
+  const result = () => {
+    if (Object.keys(cache).includes(cached)) {
+      console.log("Valor en cache");
+      return cache[cached];
+    } else {
+      console.log("Valor calculado");
+      cache[cached] = operacion(a, b);
+      return cache[cached];
+    }
+  };
+  return result;
 };
 
-console.log(realizarOperacion(1, 2, (a, b) => a + b));
-console.log(realizarOperacion(1, 2, (a, b) => a - b));
+const sumar = memoize(1, 2, (a, b) => a + b);
+
+console.log(sumar(1, 2));
+console.log(sumar(1, 2));
+console.log(sumar(1, 2));
+console.log(sumar(1, 2));
