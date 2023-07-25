@@ -373,3 +373,11 @@ console.log(miCalculadora.restar(2)); // Debería imprimir 3
 console.log(miCalculadora.multiplicar(4)); // Debería imprimir 12
 console.log(miCalculadora.dividir(2)); // Debería imprimir 6
 console.log(miCalculadora.sumar(10)); // Debería imprimir 16
+
+// Callbacks
+const realizarOperacion = (num1, num2, operacion) => {
+  return operacion(num1, num2);
+};
+
+console.log(realizarOperacion(1, 2, (a, b) => a + b));
+console.log(realizarOperacion(1, 2, (a, b) => a - b));
