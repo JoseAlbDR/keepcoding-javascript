@@ -165,11 +165,211 @@ console.log(numeros.length);
 //         NOTA: números pares son aquellos que al dividirlos por 2 el residuo/resto es 0
 // Paso 5: Después del bucle, imprime en la consola el contenido del array oddNumbers.
 
+// const numbers = [1, 2, 33, 41, 5, 60, 74, 87, 90, 101];
+// const oddNumbers = [];
+
+// for (let index = 0; index < numbers.length; index++) {
+//   if (numbers[index] % 2 !== 0) oddNumbers.push(numbers[index]);
+// }
+
+// console.log(oddNumbers);
+
+// let i = 0;
+// while (i < numbers.length) {
+//   if (numbers[i] % 2 !== 0) oddNumbers.push(numbers[i]);
+//   i++;
+// }
+
+// console.log(oddNumbers);
+
+// piedra papel tijera
+// vamos a preguntar al usuario su jugada es "piedra", "papel", "tijera"
+// # Matrix to determine who wins
+// # R - R   P - R   S - R
+// # R - P   P - P   S - P
+// # R - S   P - S   S - S
+// winnin_matrix = [["Its a draw.", "You lose.", "You win."],
+//                  ["You win.", "Its a draw.", "You lose."],
+//                  ["You lose.", "You win.", "Its a draw."]]
+// el rival siempre va a tener piedra
+
+// quit = false;
+// while (!quit) {
+//   const option = prompt(
+//     "Introduce tu jugada: 'piedra', 'papel', 'tijera', o 'salir' para salir."
+//   )
+//     .trim()
+//     .toLowerCase();
+
+//   console.log(option);
+//   if (option === "salir") {
+//     quit = true;
+//     break;
+//   }
+
+//   if (option === "tijera" || option === "papel" || option === "piedra") {
+//     const computerOption = "piedra";
+
+//     if (option === "papel")
+//       console.log(
+//         `Ganaste tu tienes ${option} y el rival tiene ${computerOption}`
+//       );
+//     if (option === "piedra")
+//       console.log(
+//         `Empate tu tienes ${option} y el rival tiene ${computerOption}`
+//       );
+//     if (option === "tijera")
+//       console.log(
+//         `Perdiste tu tienes ${option} y el rival tiene ${computerOption}`
+//       );
+//   }
+// }
+
+// let userOption = "";
+
+// while (userOption !== "salir") {
+//   while (
+//     userOption !== "piedra" &&
+//     userOption !== "papel" &&
+//     userOption !== "tijera" &&
+//     userOption !== "salir"
+//   ) {
+//     userOption = prompt(
+//       "Elija opción correcta: 'piedra', 'papel' o 'tijera'. "
+//     );
+//     console.log("opcion:", userOption);
+//   }
+//   if (userOption === "salir") break;
+//   else if (userOption === "piedra") console.log("Empatamos!");
+//   else if (userOption === "papel") console.log("Tú ganas!");
+//   else console.log("Yo gano!"); //  solo queda tijera
+// }
+
+// # Matrix to determine who wins
+// # R - R   P - R   S - R
+// # R - P   P - P   S - P
+// # R - S   P - S   S - S
+
+// winnin_matrix = [["Its a draw.", "You lose.", "You win."],
+//                  ["You win.", "Its a draw.", "You lose."],
+//                  ["You lose.", "You win.", "Its a draw."]]
+
+// const options = ["piedra", "papel", "tijera"];
+// let exit = false;
+// while (!exit) {
+//   let userOption = "";
+
+//   while (!options.includes(userOption)) {
+//     userOption = prompt(
+//       "Introduce tu jugada: 'piedra', 'papel', 'tijera', o 'salir' para salir."
+//     )
+//       .trim()
+//       .toLowerCase();
+//     if (userOption === "salir") {
+//       exit = true;
+//       break;
+//     }
+//   }
+
+//  R - R   P - R   S - R
+//  R - P   P - P   S - P
+//  R - S   P - S   S - S
+// const options = ["piedra", "papel", "tijera"];
+// const winningMatrix = [
+//   ["Its a draw.", "You lose.", "You win."],
+//   ["You win.", "Its a draw.", "You lose."],
+//   ["You lose.", "You win.", "Its a draw."],
+// ];
+
+// const randomOption = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+// console.log("Computer: " + options[randomOption]);
+// console.log("Player: " + userOption);
+// console.log(winningMatrix[options.indexOf(userOption)][randomOption]);
+// // }
+
+// const tree = [
+//   ["-", "-", "*", "-", "-"],
+//   ["-", "*", "*", "*", "-"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// let row = "";
+// for (let i = 0; i < tree.length; i++) {
+//   for (let j = 0; j < tree[0].length; j++) {
+//     row += tree[i][j];
+//   }
+//   console.log(row);
+//   row = "";
+// }
+
+// for (let i = 0; i < tree.length; i++) {
+//   console.log(tree[i].join(""));
+// }
+
+// console.log(x);
+
+// var x = "hula";
+
+// console.log(y);
+
+// const y = "adios";
+
 const numbers = [1, 2, 33, 41, 5, 60, 74, 87, 90, 101];
-const oddNumbers = [];
 
-for (let index = 0; index < numbers.length; index++) {
-  if (numbers[index] % 2 !== 0) oddNumbers.push(numbers[index]);
-}
+const getOddNumbers = function (numbers) {
+  const oddNumbers = [];
+  for (number of numbers) {
+    if (number % 2 !== 0) oddNumbers.push(number);
+  }
+  return oddNumbers;
+};
 
-console.log(oddNumbers);
+console.log(getOddNumbers(numbers).join(" "));
+
+console.log(numbers.filter((number) => number % 2 !== 0).join(" "));
+
+const counter = (inc) => {
+  console.log(this);
+  let count = 0;
+  const increment = () => (count += inc);
+  console.log(this);
+  return increment;
+};
+
+const countOne = counter(1);
+const countTwo = counter(2);
+
+console.log(countOne()); //1
+console.log(countOne()); //2
+console.log(countOne()); //3
+
+console.log(countTwo()); //2
+console.log(countTwo()); //4
+console.log(countTwo()); //6
+
+/*
+Crear un closure de una calculadora que pueda hacer las siguientes operaciones guardando el resultado
+*/
+
+const calculadora = () => {
+  let result = 0;
+
+  const sumar = (value) => (result += value);
+  const restar = (value) => (result -= value);
+  const multiplicar = (value) => (result *= value);
+  const dividir = (value) => (result /= value);
+
+  return {
+    sumar,
+    restar,
+    multiplicar,
+    dividir,
+  };
+};
+
+const miCalculadora = calculadora();
+
+console.log(miCalculadora.sumar(5)); // Debería imprimir 5
+console.log(miCalculadora.restar(2)); // Debería imprimir 3
+console.log(miCalculadora.multiplicar(4)); // Debería imprimir 12
+console.log(miCalculadora.dividir(2)); // Debería imprimir 6
+console.log(miCalculadora.sumar(10)); // Debería imprimir 16
